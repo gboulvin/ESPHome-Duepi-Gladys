@@ -4,7 +4,7 @@ uart:
   id: uart_bus
   tx_pin: ${tx_pin_esp}
   rx_pin: ${rx_pin_esp}
-  baud_rate: 115200
+  baud_rate: 9600
   debug:
     direction: RX
     dummy_receiver: true

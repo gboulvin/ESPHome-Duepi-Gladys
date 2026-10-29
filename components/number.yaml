@@ -1,4 +1,26 @@
 number:
+  # Fan speed 1-5 as a plain number for platforms that don't handle climate fan modes (Gladys, MQTT)
+  - platform: template
+    name: "Fan speed"
+    id: fan_speed_number
+    icon: "mdi:fan"
+    min_value: 1
+    max_value: 5
+    step: 1
+    mode: slider
+    update_interval: 2s
+    lambda: 'return id(fan_mode);'
+    set_action:
+      - climate.control:
+          id: Stove
+          fan_mode: !lambda |-
+            switch (static_cast<int>(x)) {
+              case 1: return CLIMATE_FAN_QUIET;
+              case 2: return CLIMATE_FAN_LOW;
+              case 3: return CLIMATE_FAN_MIDDLE;
+              case 4: return CLIMATE_FAN_MEDIUM;
+              default: return CLIMATE_FAN_HIGH;
+            }
   - platform: template
     name: "Installer parameter"
     id: installer_parameter_number

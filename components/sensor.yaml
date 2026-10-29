@@ -2,10 +2,14 @@ sensor:
   - platform: template
     name: "total burn time (h)"
     id: total_burn_time
+    unit_of_measurement: "h"
+    state_class: total_increasing
     accuracy_decimals: 0
   - platform: template
     name: "burn time (h)"
     id: burn_time
+    unit_of_measurement: "h"
+    state_class: total_increasing
     accuracy_decimals: 0
   - platform: template
     name: "error code"
@@ -16,7 +20,6 @@ sensor:
   - platform: template
     name: "exhaust fan speed"
     id: exh_fan_speed
-    device_class: "speed"
     unit_of_measurement: "RPM"
     accuracy_decimals: 0
     filters:
@@ -55,7 +58,6 @@ sensor:
     accuracy_decimals: 0
     filters:
       - round: 0
-    device_class: "speed"
   - platform: template
     name: "power level"
     id: power_level

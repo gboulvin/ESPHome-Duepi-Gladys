@@ -1,4 +1,18 @@
 switch:
+  # On/off as a plain switch for platforms that don't handle climate modes (Gladys, MQTT)
+  - platform: template
+    name: "Power"
+    id: stove_power
+    icon: "mdi:power"
+    lambda: 'return id(Stove).mode != CLIMATE_MODE_OFF;'
+    turn_on_action:
+      - climate.control:
+          id: Stove
+          mode: HEAT
+    turn_off_action:
+      - climate.control:
+          id: Stove
+          mode: "OFF"
   - platform: template
     name: "Installer mode"
     id: installer_mode

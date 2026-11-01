@@ -1,4 +1,7 @@
-:coffee: [Buy Me A Coffee](https://buymeacoffee.com/mvroosmalen)! :coffee:
+This fork intends to permit easy integration of Duepi stoves into Gladys Assistant.
+Thanx to the hard work of mvroosmalen !
+Original Readme :
+
 # ESPHome-Duepi
 The Duepi EVO climate platform is a reverse engineered implementation of the app which is controlling Pellet stove heaters using a Duepi Evo Wifi module. With this module it is possible to control your pellet stove with **HomeAssistant** or **Homey** or official **MyDPRemote** (or alternative) app. <br />
 <br />

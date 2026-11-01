@@ -8,7 +8,7 @@ number:
     max_value: 5
     step: 1
     mode: slider
-    update_interval: 2s
+    update_interval: 30s
     lambda: 'return id(fan_mode);'
     set_action:
       - climate.control:
